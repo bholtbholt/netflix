@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import { Repo } from './github';
 
 import './styles.css';
 
-/**
- * Refer to the README for instructions on completing the exercise
- */
-
-const App = () => {
-  const [repos, setRepos] = useState([]);
+const App: React.FC = () => {
+  const [repos, setRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -18,7 +16,7 @@ const App = () => {
           Accept: 'application/vnd.github.v3+json',
         },
       });
-      const data = await response.json();
+      const data: Repo[] = await response.json();
       setRepos(data);
     };
     fetchRepos();
