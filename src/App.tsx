@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import * as ReactDOM from 'react-dom';
 import { Repo } from './github';
-
-import './styles.css';
 
 export const App: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
