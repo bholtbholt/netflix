@@ -47,3 +47,4 @@ Future considerations:
 - Fix "An update to App inside a test was not wrapped in act(...)" warning caused from useEffect calling fetchRepos
 - handle error case when repo is invalid
 - Switch API from Rest to GraphQL to get better information, like PR Count, latest commit (without doing multiple request)
+- Paginate recent commits + load more
