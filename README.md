@@ -40,3 +40,9 @@ Please send us a zip file when you are ready as per the instructions in the asso
 ## Your README
 
 -- Enter your documentation here --
+
+Future considerations:
+
+- Autocomplete suggestions for the repo search
+- Fix "An update to App inside a test was not wrapped in act(...)" warning caused from useEffect calling fetchRepos
+- handle error case when repo is invalid
