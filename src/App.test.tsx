@@ -27,3 +27,21 @@ it('should request repos once rendered', async () => {
   );
   expect(window.fetch).toHaveBeenCalledTimes(1);
 });
+
+describe('when the form is submitted', () => {
+  it('should make a new request', async () => {
+    render(<App />);
+
+    const searchField = screen.getByLabelText('Search:') as HTMLInputElement;
+    const button = screen.getByText('Search') as HTMLButtonElement;
+
+    await fireEvent.change(searchField, { target: { value: 'github' } });
+    await fireEvent.submit(button.form);
+
+    expect(window.fetch).toHaveBeenLastCalledWith(
+      'https://api.github.com/orgs/github/repos',
+      expect.objectContaining({}),
+    );
+    expect(window.fetch).toHaveBeenCalledTimes(2);
+  });
+});
