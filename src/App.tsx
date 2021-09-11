@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import { fetchInit } from './apiHelpers';
 import { RepoListItem } from './RepoListItem';
 import { Repo } from './github';
 
@@ -9,12 +10,7 @@ export const App: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
 
   const fetchRepos = async () => {
-    const response = await fetch(`https://api.github.com/orgs/${org}/repos`, {
-      headers: {
-        Authorization: `token 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`,
-        Accept: 'application/vnd.github.v3+json',
-      },
-    });
+    const response = await fetch(`https://api.github.com/orgs/${org}/repos`, fetchInit);
     setLoading(false);
     const data: Repo[] = await response.json();
     setRepos(data);
