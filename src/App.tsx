@@ -5,7 +5,8 @@ import { RepoListItem } from './RepoListItem';
 import { Repo } from './github';
 
 export const App: React.FC = () => {
-  const [org, setOrg] = useState<string>('netflix');
+  const initOrg = new URLSearchParams(window.location.search).get('org') || 'netflix';
+  const [org, setOrg] = useState<string>(initOrg);
   const [loading, setLoading] = useState<boolean>(true);
   const [repos, setRepos] = useState<Repo[]>([]);
 
@@ -13,6 +14,7 @@ export const App: React.FC = () => {
     const response = await fetch(`https://api.github.com/orgs/${org}/repos`, fetchInit);
     setLoading(false);
     const data: Repo[] = await response.json();
+    window.history.pushState({}, '', `/?org=${org}`);
     setRepos(data);
   };
 
