@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import { RepoListItem } from './RepoListItem';
 import { Repo } from './github';
 
 export const App: React.FC = () => {
@@ -53,7 +54,7 @@ export const App: React.FC = () => {
       </form>
       <ul id="repo-list">
         {repos.map((repo) => (
-          <div>{repo.name}</div>
+          <RepoListItem key={repo.id} {...repo} />
         ))}
       </ul>
     </div>
