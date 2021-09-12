@@ -1,4 +1,5 @@
 import * as React from 'react';
+import renderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { RepoListItem } from './RepoListItem';
 import { createCommit, createRepo } from './fixtures';
@@ -10,6 +11,12 @@ beforeEach(() => {
     ok: true,
     json: async () => [createCommit()],
   });
+});
+
+it('should match snapshot', async () => {
+  const snapshot = renderer.create(<RepoListItem {...createRepo()} />).toJSON();
+
+  expect(snapshot).toMatchSnapshot();
 });
 
 it('should request recent commits', async () => {

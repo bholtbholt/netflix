@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { App } from './App';
 
 beforeEach(() => {
@@ -11,9 +12,16 @@ beforeEach(() => {
   });
 });
 
+it('should match snapshot', async () => {
+  const renderer = new ShallowRenderer();
+  const snapshot = renderer.render(<App />);
+
+  expect(snapshot).toMatchSnapshot();
+});
+
 it('should render the page title', () => {
   render(<App />);
-  const component = screen.getByText('Github Repo Search');
+  const component = screen.getByText('GithubRepo Search');
 
   expect(component).toBeInTheDocument();
 });
