@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<li
+  className="flex items-start -ml-7 mt-6"
+>
+  <svg
+    aria-hidden="true"
+    className="flex-shrink-0 mr-3 text-green-500 bg-white"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M17.5 11.75a.75.75 0 01.75-.75h5a.75.75 0 010 1.5h-5a.75.75 0 01-.75-.75zm-17.5 0A.75.75 0 01.75 11h5a.75.75 0 010 1.5h-5a.75.75 0 01-.75-.75z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M12 16.25a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z\\"></path>",
+      }
+    }
+    fill="currentColor"
+    height={28}
+    role="img"
+    style={
+      Object {
+        "display": "inline-block",
+        "overflow": "visible",
+        "userSelect": "none",
+        "verticalAlign": "text-bottom",
+      }
+    }
+    viewBox="0 0 24 24"
+    width={28}
+  />
+  <div
+    className="flex-1"
+  >
+    <a
+      className="text-lg font-semibold text-indigo-800 hover:text-indigo-600 mb-1 inline-block"
+      href="https://github.com/Netflix/zuul/commit/6d29e74fd27e6e3ad8b7efa8de511a567654cf63"
+      rel="nofollow"
+      target="_blank"
+    >
+      core: include proxy protocol in server conn dimms
+    </a>
+    <ul
+      className="flex items-center flex-wrap gap-x-4 text-gray-600"
+    >
+      <li
+        className="flex items-center text-sm"
+      >
+        <a
+          className="flex items-center font-semibold hover:underline mr-1"
+          href="https://github.com/carl-mastrangelo"
+          rel="nofollow"
+          target="_blank"
+        >
+          <img
+            alt="Profile picture of carl-mastrangelo"
+            className="rounded-full mr-1"
+            height="24"
+            src="https://avatars.githubusercontent.com/u/8943572?v=4"
+            width="24"
+          />
+          carl-mastrangelo
+        </a>
+        <span
+          className="hidden md:inline md:mr-1"
+        >
+          committed on
+        </span>
+        Sep. 1, 2021
+      </li>
+      <li
+        className="font-mono leading-5 font-semibold tracking-wide text-2xs bg-gray-100 px-2"
+      >
+        6d29e74
+      </li>
+    </ul>
+  </div>
+</li>
+`;
