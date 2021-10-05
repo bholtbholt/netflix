@@ -1,9 +1,10 @@
 {
-  "name": "pxd-tech-eval",
+  "name": "Github API Project",
   "version": "1.0.0",
-  "description": "A technical evaluation for PXD UI developers",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "homepage": "https://bholtbholt.github.io/github-api/",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@primer/octicons-react": "^15.1.0",
@@ -12,6 +13,7 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^16.9.1",
     "@types/react-dom": "^17.0.9",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
@@ -34,6 +36,8 @@
     ]
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test --env=jsdom",
