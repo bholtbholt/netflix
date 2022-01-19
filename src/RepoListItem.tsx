@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Commit, Repo } from './github';
-import { fetchInit } from './apiHelpers';
 import { CommitListItem } from './CommitListItem';
 import { LoadingSpinner } from './LoadingSpinner';
 import { GitPullRequestIcon, IssueOpenedIcon, StarIcon } from '@primer/octicons-react';
@@ -23,7 +22,6 @@ export const RepoListItem: React.FC<Repo> = ({
   const fetchCommits = async () => {
     const response = await fetch(
       `https://api.github.com/repos/${owner.login}/${name}/commits?per_page=10`,
-      fetchInit,
     );
     setLoading(false);
 

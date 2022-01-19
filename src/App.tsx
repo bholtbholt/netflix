@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { fetchInit } from './apiHelpers';
 import { RepoListItem } from './RepoListItem';
 import { RepoListItemLoading } from './RepoListItemLoading';
 import { LoadingSpinner } from './LoadingSpinner';
@@ -13,7 +12,7 @@ export const App: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
 
   const fetchRepos = async () => {
-    const response = await fetch(`https://api.github.com/orgs/${org}/repos`, fetchInit);
+    const response = await fetch(`https://api.github.com/orgs/${org}/repos`);
     setLoading(false);
 
     if (response.ok) {
